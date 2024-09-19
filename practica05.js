@@ -10,17 +10,24 @@ const app = document.getElementById("app")
     </figure>
             `
         }
-        console.log(picture())
+        //console.log(picture())
         app.innerHTML = picture(1) + picture(2) + picture(3)
 
-        const elemento1 = document.getElementById("1")
+        /*const elemento1 = document.getElementById("1")
         const elemento2 = document.getElementById("2")
         const elemento3 = document.getElementById("3")
         elemento1.addEventListener("click", miFuncion)
         elemento2.addEventListener("click", miFuncion)
-        elemento3.addEventListener("click", miFuncion)
+        elemento3.addEventListener("click", miFuncion)*/
 
-        function miFuncion() {
+        const lista = document.querySelectorAll("img")
+        for (let i=0; i<lista.length; i++){
+            lista[i].addEventListener("mouseenter", (evento) => {evento.target.classList.toggle("redonda")})
+        }
+
+        function miFuncion(evento) {
             console.log("Ayyyyy")
-            console.log(parametro)
+            console.log(evento)
+            var imagen = evento.target
+            imagen.classList.toggle("redonda")
         }
